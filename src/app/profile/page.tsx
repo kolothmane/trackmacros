@@ -102,7 +102,7 @@ export default function ProfilePage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-bold">Profil &amp; Objectifs</h1>
+          <h1 className="text-xl font-bold">Profil & Objectifs</h1>
           <p className="text-zinc-400 text-sm mt-0.5">Calcule ton TDEE et définis tes objectifs</p>
         </div>
         {profile && (
@@ -198,7 +198,7 @@ export default function ProfilePage() {
         </div>
 
         <div className="space-y-1">
-          <label className="text-xs text-zinc-400">Niveau d&apos;activité</label>
+          <label className="text-xs text-zinc-400">{"Niveau d'activité"}</label>
           <select
             value={form.activity}
             onChange={(e) => set('activity', e.target.value)}

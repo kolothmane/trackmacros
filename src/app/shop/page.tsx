@@ -26,12 +26,13 @@ export default function ShopPage() {
   async function generateList() {
     setLoading(true);
     setError('');
+    const safeBudget = BUDGET_OPTIONS.includes(budget) ? budget : 50;
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          message: `Génère une liste de courses hebdomadaire pour la musculation et la nutrition sportive avec un budget de ${budget}€. Inclus des protéines, légumes, féculents et éventuellement des compléments pas chers. Retourne le type "shop".`,
+          message: `Génère une liste de courses hebdomadaire pour la musculation et la nutrition sportive avec un budget de ${safeBudget}€. Inclus des protéines, légumes, féculents et éventuellement des compléments pas chers. Retourne le type "shop".`,
         }),
       });
       const data = await res.json();
